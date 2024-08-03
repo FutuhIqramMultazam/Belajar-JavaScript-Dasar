@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var tanya = true; // untuk mengulang program
+      while (tanya) {
+        var p = prompt("Pilih: gajah, semut, orang"); //menangkap pilihan user
+        if (p === null) {
+          break;
+        }
+        p = p.toLowerCase();
+        var comp = Math.random(); // menangkap pilihan komputer
+
+        if (comp < 0.34) {
+          comp = "gajah";
+        } else if (comp >= 0.34 && comp <= 0.67) {
+          comp = "orang";
+        } else {
+          comp = "semut";
+        }
+        var hasil = "";
+        if (p == comp) {
+          hasil = "seri!";
+        } else if (p == "gajah") {
+          /* if (comp == "orang") {
+            hasil = "menang";
+          } else {
+            hasil = "kalah";
+          }*/
+          hasil = comp == "orang" ? "menang" : "kalah";
+        } else if (p == "orang") {
+          hasil = comp == "gajah" ? "kalah" : "menang";
+        } else if (p == "semut") {
+          hasil = comp == "orang" ? "kalah" : "menang";
+        } else {
+          alert("Anda memasukan pilihan yang salah");
+          continue;
+        }
+        alert("kamu memilih: " + p + " dan komputer memilih : " + comp + "\nmaka hasilnya : " + hasil);
+        tanya = confirm("lagi??");
+      }
+    </script>
+  </body>
+</html>

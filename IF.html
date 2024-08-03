@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percabangan.com</title>
+  </head>
+  <body>
+    <h1>Percabangan latihan</h1>
+    <!-- yang di bawah ini program menghitung angka genap -->
+    <!-- <script>
+      var angka = parseInt(prompt("masukan angka yang anda cek:"));
+      if (angka % 2 == 0) {
+        alert("anda memasukan angka genap");
+      } else {
+        alert("anda memasukan angka ganjil");
+      }
+    </script> -->
+
+    <!-- latihan percabangan di dalam for looping -->
+    <script>
+      var noangkot = 1;
+      var jmlangkot = 10;
+      var beroperasi = 6;
+
+      for (noangkot = 1; noangkot <= jmlangkot; noangkot++) {
+        if (noangkot <= beroperasi && noangkot !== 5) {
+          console.log("angkot no." + noangkot + " beroperasi dengan baik");
+        } else if (noangkot === 8 || noangkot === 10 || noangkot === 5) {
+          console.log("angkot no." + noangkot + " sedang lembur");
+        } else {
+          console.log("angkot no." + noangkot + " tidak beroperasi");
+        }
+      }
+    </script>
+  </body>
+</html>

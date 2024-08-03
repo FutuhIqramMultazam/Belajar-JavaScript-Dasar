@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator sederhana.com</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var lagi = true;
+      while (lagi) {
+        var operand1 = parseInt(prompt("Selamat Datang di kalkulator sederhana dengan menggunakan Java script\n\nmasukan angka ke 1: "));
+        var operator = prompt("pilih operator (+ - x )");
+        var operand2 = parseInt(prompt("masukan angka ke 2: "));
+
+        if (operator === "+") {
+          var hasil = operand1 + operand2;
+          alert(hasil);
+        } else if (operand1 === null) {
+          continue;
+        } else if (operator === "-") {
+          hasil = operand1 - operand2;
+          alert(hasil);
+        } else if (operator === "x") {
+          hasil = operand1 * operand2;
+          alert(hasil);
+        } else {
+          alert("Yang anda masukan salah");
+          continue;
+        }
+        lagi = confirm("mau coba lagi??");
+      }
+    </script>
+  </body>
+</html>

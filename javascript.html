@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Tebak Angka</title>
+    <script>
+      let nyawa = 3;
+      const angkaAcak = Math.floor(Math.random() * 10) + 1;
+
+      function tebakAngka() {
+        const tebakan = parseInt(document.getElementById("tebakan").value);
+        const hasil = document.getElementById("hasil");
+
+        if (nyawa > 1) {
+          if (tebakan === angkaAcak) {
+            hasil.textContent = "Selamat! Tebakan kamu benar.";
+          } else {
+            nyawa--;
+            hasil.textContent = `Tebakan kamu salah. Kamu punya ${nyawa} nyawa tersisa. Coba lagi!`;
+          }
+        } else {
+          hasil.textContent = `Game Over! Angka yang benar adalah ${angkaAcak}.`;
+          document.getElementById("tebakan").disabled = true;
+          document.getElementById("tombolTebak").disabled = true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Game Tebak Angka</h1>
+    <p>Silakan tebak angka dari 1 sampai 10:</p>
+    <input type="number" id="tebakan" min="1" max="10" />
+    <button id="tombolTebak" onclick="tebakAngka()">Tebak</button>
+    <p id="hasil"></p>
+  </body>
+</html>

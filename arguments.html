@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function tambah() {
+        var hasil = 0; // arguments.length berfungsi untuk menjadikan array menjadi angka, contoh ketika kita mengirimkan 2 argumen, alhasil element yang ada di arguments.lengs menjadi 2 index, nah inedx ini menjadi angka
+        // lalu apa arti dari arguments[i] ?, itu untuk mengambil nilai dari array arguments sesuai dengan no/angka atau bisa di sebut nilai dari var i untuk mengambil index ke berapa yang akan di ambil di array arguments sesuai dengan urutan index array. contoh nya di dalam aray itu kan gini: arguments=["index 0","index 1"]; , contoh setudi kasus nya. arguments = [2,3]; index 0 adalah nilainya 2 dan index 1 adalah nilainya 3, jadi ketika looping index ke 0 kan 2, di masukin ke variabel hasil, dan ketika loop ke dua klai datang, nilai yang ada di index 1 yaitu 3 di tambah ke var hasil, maka hasilnya menjadi 5
+        for (var i = 0; i < arguments.length; i++) {
+          hasil += arguments[i]; // nah ini mengammbil nilai yang ada di setiap array arguments, contoh , arguments=[2,3]; index ke 0 adalah 2 dan index ke 1 adalah 3, ketika ketika dia looping ke 1 dia ambil nilai 2, ketika looping ke 2 dia ambil nilai yang 3 itu yang ada di kotak
+        }
+        return hasil;
+      }
+      var coba = tambah(2, 3);
+      console.log(coba);
+    </script>
+
+    <!-- <script>
+      function jumlahkan() {
+        console.log(arguments);
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          total += arguments[i];
+        }
+        return total;
+      }
+
+      const hasil = jumlahkan(1, 1);
+      console.log(hasil);
+    </script> -->
+  </body>
+</html>

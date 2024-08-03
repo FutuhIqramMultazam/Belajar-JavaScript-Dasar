@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function.com</title>
+    <style>
+      body {
+        background-image: url(/img/gambar\ wa\ darkmode.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ini contoh function sederhana -->
+    <script>
+      function p(nama) {
+        console.log("hello, " + nama + "!");
+      }
+      p("icam");
+      p("fadilah");
+
+      function angka(a, b) {
+        var hasil = a + b;
+        console.log("hasil dari a + b adalah: " + hasil);
+      }
+      angka(5, 5);
+    </script>
+
+    <!-- contoh function deklarasi -->
+    <script>
+      function dilot(p) {
+        console.log("hai " + p);
+      }
+      dilot("icam");
+    </script>
+
+    <!-- contoh function expresi -->
+    <script>
+      var dilot = function (p) {
+        var p = "";
+        console.log("hai " + p);
+      };
+    </script>
+
+    <!-- membuat sisi kubus menggunakan function -->
+    <script>
+      function itungkubus(a, b) {
+        var volumeA = a * a * a;
+        var volumeB = b * b * b;
+        var total = volumeA + volumeB;
+        return total;
+      }
+      console.log(itungkubus(2, 4));
+      console.log(itungkubus(5, 3));
+    </script>
+
+    <!-- Pembahasan parameter dan argumen -->
+    <script>
+      function tambah(a, b) {
+        return a + b;
+      }
+      var a = 10; // di sini kamu juga bisa ubahh jadi prompt
+      var b = 10;
+      var hasil = tambah(a, b);
+      console.log(hasil);
+    </script>
+
+    <!-- kamu bisa menambahkan perkalian di dalam argumen -->
+    <!-- <script>
+      function tambah(a, b) {
+        return a + b;
+      }
+      var a = 20;
+      var b = 20;
+      var hasil = tambah(a * 2, b * 2);
+      console.log(hasil);
+    </script> -->
+
+    <!-- kita bisa menyimpan argumen di parameter function lain contohnya seperti ini -->
+    <script>
+      function kali(a, b) {
+        return a * b;
+      }
+      var hasil = kali(tambah(1, 1), tambah(2, 2));
+      console.log(hasil);
+    </script>
+
+    <!-- kali ini kita akan mencoba function memakai variable arguments, contohnya seperti ini -->
+    <script>
+      function tambah() {
+        return arguments; // di sini nya kita isi dengan arguments
+      }
+      var coba = tambah(8, 3, 9, "icam", true); // lalu kita masukan argumen dengan random
+      console.log(coba); // dan automatis parameternya memiliki nilai
+    </script>
+
+    <!-- mencoba sudo variable argumen -->
+    <script>
+      function tambah() {
+        var hasil = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          hasil += arguments[i];
+        }
+        return hasil;
+      }
+      var coba = tambah(1, 2, 3, 4, 5, 6, 7);
+      console.log(coba); // pelajari lagi di chatGPT tentang sudo variable arguments
+    </script>
+
+    <!-- function scope -->
+    <script>
+      var a = 1;
+      function tes() {
+        var a = 2;
+      }
+      tes();
+      console.log(a); //jika kita memangil variable a nya di luar maka yang akan tampil angka 1, jika ingin jadi angka ingin angka 2 pindahkan console.log nya di dalam function, kenapa bia seperti itu ?, karena variable yang di dalam function memakai deklarasi var
+    </script>
+    <!-- PR buat kamu fahami apa itu faktoraial -->
+  </body>
+</html>
