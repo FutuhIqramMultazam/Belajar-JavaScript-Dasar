@@ -47,6 +47,7 @@ kotak.classList.replace(""); // fungsi ini jadi mengganti class yang ada, contoh
 
 document.createElement();
 document.createTextNode();
+document.insertBefore();
 
 // ### studi kasus ke 1 ###
 
