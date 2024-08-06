@@ -152,3 +152,13 @@ p4.addEventListener("click", function () {
   a.setAttribute("href", inputLink);
   a.setAttribute("target", "_blank");
 });
+
+// ### Studi kasus ke 3 ###
+
+judul.addEventListener("mouseenter", function () {
+  judul.style.backgroundColor = "green";
+});
+
+judul.addEventListener("mouseleave", function () {
+  judul.style.backgroundColor = " #333";
+});
