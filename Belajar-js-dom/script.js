@@ -1,37 +1,50 @@
-// creat
+// ambil element
 
-const p3 = document.querySelector(".p3");
+const ubahWarna = document.getElementById("ubahWarna");
 
-function ubahWarnaP3() {
-  p3.style.backgroundColor = "green";
-}
+ubahWarna.onclick = function () {
+  // document.body.setAttribute("class", "biru-muda");
+  document.body.classList.toggle("biru-muda");
+};
 
-const p2 = document.querySelector(".p2");
+const acakwarna = document.createElement("button");
 
-function ubahWarnaP2() {
-  p2.style.backgroundColor = "green";
-}
+const tekswarna = document.createTextNode("acak warna");
 
-p2.onclick = ubahWarnaP2;
-p3.onclick = ubahWarnaP3;
+acakwarna.appendChild(tekswarna);
 
-// mulai
-// ambil element yang mau di event
-const p4 = document.querySelector("section#b p");
+acakwarna.setAttribute("type", "button");
 
-p4.addEventListener("click", function () {
-  // panggil element
-  const ul = document.querySelector("section#b ul");
+ubahWarna.after(acakwarna);
 
-  // buat elemen yang anda panggil
-  const liBaru = document.createElement("li");
+acakwarna.addEventListener("click", function () {
+  const r = Math.round(Math.random() * 255 + 1);
+  const g = Math.round(Math.random() * 255 + 1);
+  const b = Math.round(Math.random() * 255 + 1);
+  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+});
 
-  // isi elemen dengan creatTextNode
-  const teksLi = document.createTextNode("item baru");
+const sMerah = document.querySelector("input[name=sMerah]");
+const sHijau = document.querySelector("input[name=sHijau]");
+const sBiru = document.querySelector("input[name=sBiru]");
 
-  // lalu appendChild
-  liBaru.appendChild(teksLi);
-  ul.appendChild(liBaru);
+sMerah.addEventListener("input", function () {
+  const r = sMerah.value;
+  const g = sHijau.value;
+  const b = sBiru.value;
+  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+});
 
-  // selesai
+sHijau.addEventListener("input", function () {
+  const r = sMerah.value;
+  const g = sHijau.value;
+  const b = sBiru.value;
+  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+});
+
+sBiru.addEventListener("input", function () {
+  const r = sMerah.value;
+  const g = sHijau.value;
+  const b = sBiru.value;
+  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 });
