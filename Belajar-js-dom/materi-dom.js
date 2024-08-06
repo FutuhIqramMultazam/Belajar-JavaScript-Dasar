@@ -48,6 +48,7 @@ kotak.classList.replace(""); // fungsi ini jadi mengganti class yang ada, contoh
 document.createElement();
 document.createTextNode();
 document.insertBefore();
+Element.appendChild(element);
 
 // ### studi kasus ke 1 ###
 
@@ -93,3 +94,13 @@ s.appendChild(form);
 // manipulasi
 form.setAttribute("action", "materi-dom.js");
 input.setAttribute("placeholder", "isi nama anda");
+
+// %%% DOM event %%%
+
+element.addEventListener("click", function () {
+  // panggil element
+  // buat elemen yang anda panggil
+  // isi elemen dengan creatTextNode
+  // lalu appendChild
+  // selesai
+});
