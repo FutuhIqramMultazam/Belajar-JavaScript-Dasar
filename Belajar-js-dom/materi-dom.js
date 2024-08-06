@@ -94,6 +94,7 @@ s.appendChild(form);
 // manipulasi
 form.setAttribute("action", "materi-dom.js");
 input.setAttribute("placeholder", "isi nama anda");
+//==========================================
 
 // %%% DOM event %%%
 
@@ -103,4 +104,51 @@ element.addEventListener("click", function () {
   // isi elemen dengan creatTextNode
   // lalu appendChild
   // selesai
+});
+
+// ### Studi kasus ke 1 ###
+// mulai
+// ambil element yang mau di event
+const p4 = document.querySelector("section#b p");
+
+p4.addEventListener("click", function () {
+  // panggil element
+  const ul = document.querySelector("section#b ul");
+
+  // buat elemen yang anda panggil
+  const liBaru = document.createElement("li");
+
+  // isi elemen dengan creatTextNode
+  const teksLi = document.createTextNode("item baru");
+
+  // lalu appendChild
+  liBaru.appendChild(teksLi);
+  ul.appendChild(liBaru);
+
+  // selesai
+});
+
+// ### Studi kasus ke 2 buatan sendiri ###
+// pilih element nya
+p4.addEventListener("click", function () {
+  // jika mau menggunakan promp
+  let input = prompt("masukan nama");
+  let inputA = prompt("masukan teks untuk link");
+  let inputLink = prompt("masukan link");
+  // bikin element
+  const a = document.createElement("a");
+  const liBaru = document.createElement("li");
+  //  bikin isinya
+  const teksLiBaru = document.createTextNode(input);
+  const teksa = document.createTextNode(inputA);
+  // masukan kedua variable di atas ke dalam element parentnya yaitu UL
+  liBaru.appendChild(teksLiBaru);
+  a.appendChild(teksa);
+  // ini element parentnya
+  const ul = document.querySelector("section#b ul");
+  ul.appendChild(liBaru);
+  ul.appendChild(a);
+  // manipulasi
+  a.setAttribute("href", inputLink);
+  a.setAttribute("target", "_blank");
 });
