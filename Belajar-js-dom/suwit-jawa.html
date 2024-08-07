@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game</title>
+  </head>
+  <body>
+    <script>
+      // mulai
+
+      // masukin ke perulangan
+      let tanya = true;
+
+      while (tanya) {
+        // menangkap pilihan user
+        let user = prompt("Kertas, Gunting, Batu");
+
+        // cek apakah user tidak memasukan apa apa?
+        if (user === null) {
+          tanya = confirm("Anda yakin akan keluar?");
+          break;
+        }
+
+        // ubah inputan user menjadi lowercase
+        user = user.toLowerCase();
+
+        // membuat computer dan menangkap pilihan computer
+        let comp = Math.random();
+
+        // membuat pilihan computer
+        if (comp < 0.34) {
+          comp = "kertas";
+        } else if (comp >= 0.34 && comp < 0.67) {
+          comp = "gunting";
+        } else {
+          comp = "batu";
+        }
+
+        var hasil = "";
+        // penyesuaian akhir
+        if (user === comp) {
+          hasil = "Kalian seri!";
+        }
+
+        // kondisi kertas dan gunting
+        else if (user === "kertas") {
+          if (comp === "gunting") {
+            hasil = "kalah";
+          } else {
+            hasil = "menang";
+          }
+        }
+
+        // kondisi gunting dan batu
+        else if (user === "gunting") {
+          hasil = comp === "batu" ? "kalah" : "menang";
+        }
+
+        // kondisi batu dan kertas
+        else if (user === "batu") {
+          hasil = comp === "kertas" ? "kalah" : "menang";
+        }
+
+        // jika user salah ketik dan tidak memasukan apa apa
+        else {
+          alert("Anda memasukan pilihan yang salah");
+          continue;
+        }
+
+        // menampilkan hasil
+        alert("Hasilnya " + hasil + " anda pilih " + user + " dan computer pilih " + comp);
+
+        tanya = confirm("Main lagi?");
+      }
+    </script>
+  </body>
+</html>

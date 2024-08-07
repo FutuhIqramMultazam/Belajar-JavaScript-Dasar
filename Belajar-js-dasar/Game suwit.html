@@ -16,6 +16,7 @@
         p = p.toLowerCase();
         var comp = Math.random(); // menangkap pilihan komputer
 
+        // pemilihan nomor
         if (comp < 0.34) {
           comp = "gajah";
         } else if (comp >= 0.34 && comp <= 0.67) {
@@ -23,6 +24,8 @@
         } else {
           comp = "semut";
         }
+
+        //
         var hasil = "";
         if (p == comp) {
           hasil = "seri!";

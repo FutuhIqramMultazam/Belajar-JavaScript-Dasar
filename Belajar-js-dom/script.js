@@ -1,50 +1,66 @@
-// ambil element
+// mulai
 
-const ubahWarna = document.getElementById("ubahWarna");
+// masukin ke perulangan
+let tanya = true;
 
-ubahWarna.onclick = function () {
-  // document.body.setAttribute("class", "biru-muda");
-  document.body.classList.toggle("biru-muda");
-};
+while (tanya) {
+  // menangkap pilihan user
+  let user = prompt("Kertas, Gunting, Batu");
 
-const acakwarna = document.createElement("button");
+  // cek apakah user tidak memasukan apa apa?
+  if (user === null) {
+    tanya = confirm("Anda yakin akan keluar?");
+    break;
+  }
 
-const tekswarna = document.createTextNode("acak warna");
+  // ubah inputan user menjadi lowercase
+  user = user.toLowerCase();
 
-acakwarna.appendChild(tekswarna);
+  // membuat computer dan menangkap pilihan computer
+  let comp = Math.random();
 
-acakwarna.setAttribute("type", "button");
+  // membuat pilihan computer
+  if (comp < 0.34) {
+    comp = "kertas";
+  } else if (comp >= 0.34 && comp < 0.67) {
+    comp = "gunting";
+  } else {
+    comp = "batu";
+  }
 
-ubahWarna.after(acakwarna);
+  var hasil = "";
+  // penyesuaian akhir
+  if (user === comp) {
+    hasil = "Kalian seri!";
+  }
 
-acakwarna.addEventListener("click", function () {
-  const r = Math.round(Math.random() * 255 + 1);
-  const g = Math.round(Math.random() * 255 + 1);
-  const b = Math.round(Math.random() * 255 + 1);
-  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-});
+  // kondisi kertas dan gunting
+  else if (user === "kertas") {
+    if (comp === "gunting") {
+      hasil = "kalah";
+    } else {
+      hasil = "menang";
+    }
+  }
 
-const sMerah = document.querySelector("input[name=sMerah]");
-const sHijau = document.querySelector("input[name=sHijau]");
-const sBiru = document.querySelector("input[name=sBiru]");
+  // kondisi gunting dan batu
+  else if (user === "gunting") {
+    hasil = comp === "batu" ? "kalah" : "menang";
+  }
 
-sMerah.addEventListener("input", function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-});
+  // kondisi batu dan kertas
+  else if (user === "batu") {
+    hasil = comp === "kertas" ? "kalah" : "menang";
+  }
 
-sHijau.addEventListener("input", function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-});
+  // jika user salah ketik dan tidak memasukan apa apa
+  else {
+    alert("Anda memasukan pilihan yang salah");
+    continue;
+  }
 
-sBiru.addEventListener("input", function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-});
+  // menampilkan hasil
+  alert("Hasilnya " + hasil + " anda pilih " + user + " dan computer pilih " + comp);
+
+  tanya = confirm("Main lagi?");
+}

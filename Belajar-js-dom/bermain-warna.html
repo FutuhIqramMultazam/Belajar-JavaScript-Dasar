@@ -96,6 +96,12 @@
         const b = sBiru.value;
         document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
       });
+
+      document.body.addEventListener("mouseover", function (event) {
+        // mouse
+        // console.log(event.clientX);
+        console.log(window.innerWidth);
+      });
     </script>
   </body>
 </html>
