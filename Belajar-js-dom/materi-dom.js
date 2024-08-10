@@ -149,7 +149,7 @@ p4.addEventListener("click", function () {
   ul.appendChild(liBaru);
   ul.appendChild(a);
   // manipulasi
-  a.setAttribute("href", inputLink);
+  a.setAttribute("href", "inputLink");
   a.setAttribute("target", "_blank");
 });
 
