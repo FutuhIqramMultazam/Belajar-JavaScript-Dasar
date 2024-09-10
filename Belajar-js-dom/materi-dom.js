@@ -25,13 +25,13 @@ kotak.style.color = "green";
 // %%% DOM manipulasi element %%%
 
 // kotak = element
-kotak.innerHTML = "fadilahfatwa";
-kotak.style.color = "green";
+kotak.innerHTML = "fadilahfatwa"; // untuk merubah isi dari element tersebut, contoh h1 di isi "hello world", ketika di manipulasi innerHTML = "fadilah fatwa", maka berubah jadi fadilah fatwa
+kotak.style.color = "green"; // ini untuk merubah warna teks
 kotak.setAttribute("class", "kepala");
 kotak.getAttribute("id"); // output: judul
 kotak.setAttribute("id", "judol"); //output:  id="judol"
 kotak.removeAttribute("id"); // output: id == null
-kotak.classList.add("kaki");
+kotak.classList.add("kaki"); // untuk menambah nilai di atribut class
 kotak.classList.remove("kaki");
 kotak.classList.toggle("judul"); // output: ngecek isi class, ada ga class yang bernama judul?, kalo ga ada di isi, kalo ada di hapus.
 
