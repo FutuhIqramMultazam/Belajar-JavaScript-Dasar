@@ -47,8 +47,10 @@ kotak.classList.replace(""); // fungsi ini jadi mengganti class yang ada, contoh
 
 document.createElement();
 document.createTextNode();
-document.insertBefore();
 Element.appendChild(element);
+element.insertBefore(teksBaru, sebelumApa); // parameter ke satu untuk nilai baru nya, dan yang ke dua mau sebelum element apa di tambahkan nya?
+parentNode.removeChild();
+parentNode.replaceChild(param1, param2); // dia menerima 2 parameter, param ke 1 akan me replace apa?
 
 // ### studi kasus ke 1 ###
 
