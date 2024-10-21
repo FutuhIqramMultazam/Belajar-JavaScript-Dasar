@@ -98,3 +98,73 @@ let fadilah = new mahasiswa("Fadilah Fatwa", 5);
   };
 }
 let icam = new mahasiswa("Futuh Iqram Multazam", 10); */
+
+// create content #########################################################################
+/* function a() {
+  var nama = "Futuh Iqram Multazam";
+  console.log(nama);
+}
+
+function b() {
+  console.log(nama);
+}
+
+console.log(nama);
+var nama = "fadilah";
+a();
+b("denu");
+console.log(nama); */
+
+// Pembahasan closure #########################################################################
+
+// contoh satu
+/* function init() {
+  // let nama = "Futuh Iqram Multazam";
+  return function (nama) {
+    console.log(nama);
+  };
+}
+
+let tampilNama = init();
+tampilNama("Futuh"); */
+
+// contoh dua
+/* function ucapkanSalam(waktu) {
+  return function (nama) {
+    console.log(`Hallo ${nama}, selamat ${waktu}`);
+  };
+}
+
+let selamatSiang = ucapkanSalam("Pagi");
+selamatSiang("Icam"); */
+
+// Pembahasan arrow function #########################################################################
+// contoh-contoh arrow function
+
+/* let tampilNama = (nama = "manusia") => {
+  return `Hallo ${nama}`;
+}; */
+
+/* let tampilNama = (nama) => {
+  // sebenernya ini kalo hanya satu param itu ga usah pake kurung buka kurung tutup
+  return `Hallo ${nama}`;
+}; */
+
+/* let tampilNama = (nama, waktu) => {
+  // nah kalo dua param harus pake kurung
+  return `Hallo ${nama}, Selamat ${waktu}`;
+};
+ */
+
+// let tampilNama = (nama) => `Hallo ${nama}`;
+
+// let tampilHello = () => `Hello world`;
+
+let mahasiswa = ["icam", "fadilah", "syafa"];
+/* let jumlahHuruf = mahasiswa.map(function (nama) {
+  return { nama: nama, jmlhuruf: nama.length };
+}); */
+// let jumlahHuruf = mahasiswa.map((nama) => nama.length);
+let jumlahHuruf = mahasiswa.map((nama) => ({ nama, jmlhuruf: nama.length }));
+
+console.table(jumlahHuruf);
