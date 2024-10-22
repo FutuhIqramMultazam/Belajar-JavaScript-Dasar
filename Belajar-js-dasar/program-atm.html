@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      // Program ATM Sederhana
+
+      // Saldo awal
+      let saldo = 1000000;
+
+      // Fungsi untuk menampilkan menu ATM
+      function tampilkanMenu() {
+        return prompt("Selamat datang di ATM Sederhana!\n" + "Pilih opsi berikut:\n" + "1. Cek Saldo\n" + "2. Setor Tunai\n" + "3. Tarik Tunai\n" + "4. Keluar\n");
+      }
+
+      // Fungsi untuk cek saldo
+      function cekSaldo() {
+        alert("Saldo Anda saat ini: Rp " + saldo);
+      }
+
+      // Fungsi untuk setor tunai
+      function setorTunai() {
+        let jumlahSetor = parseInt(prompt("Masukkan jumlah yang ingin disetor: "));
+        if (!isNaN(jumlahSetor) && jumlahSetor > 0) {
+          saldo += jumlahSetor;
+          alert("Anda berhasil menyetor Rp " + jumlahSetor + "\nSaldo Anda sekarang: Rp " + saldo);
+        } else {
+          alert("Masukkan jumlah yang valid!");
+        }
+      }
+
+      // Fungsi untuk tarik tunai
+      function tarikTunai() {
+        let jumlahTarik = parseInt(prompt("Masukkan jumlah yang ingin ditarik: "));
+        if (!isNaN(jumlahTarik) && jumlahTarik > 0) {
+          if (jumlahTarik <= saldo) {
+            saldo -= jumlahTarik;
+            alert("Anda berhasil menarik Rp " + jumlahTarik + "\nSaldo Anda sekarang: Rp " + saldo);
+          } else {
+            alert("Saldo tidak cukup untuk menarik jumlah tersebut!");
+          }
+        } else {
+          alert("Masukkan jumlah yang valid!");
+        }
+      }
+
+      // Fungsi utama ATM
+      function atm() {
+        let pilihan;
+        do {
+          pilihan = tampilkanMenu();
+          switch (pilihan) {
+            case "1":
+              cekSaldo();
+              break;
+            case "2":
+              setorTunai();
+              break;
+            case "3":
+              tarikTunai();
+              break;
+            case "4":
+              alert("Terima kasih telah menggunakan ATM kami!");
+              break;
+            default:
+              alert("Pilihan tidak valid, coba lagi.");
+          }
+        } while (pilihan !== "4");
+      }
+
+      // Menjalankan program ATM
+      atm();
+    </script>
+  </body>
+</html>

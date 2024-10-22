@@ -160,11 +160,47 @@ selamatSiang("Icam"); */
 
 // let tampilHello = () => `Hello world`;
 
-let mahasiswa = ["icam", "fadilah", "syafa"];
+// let mahasiswa = ["icam", "fadilah", "syafa"];
 /* let jumlahHuruf = mahasiswa.map(function (nama) {
   return { nama: nama, jmlhuruf: nama.length };
 }); */
 // let jumlahHuruf = mahasiswa.map((nama) => nama.length);
-let jumlahHuruf = mahasiswa.map((nama) => ({ nama, jmlhuruf: nama.length }));
+/* let jumlahHuruf = mahasiswa.map((nama) => ({ nama, jmlhuruf: nama.length }));
 
 console.table(jumlahHuruf);
+ */
+
+// pembahasan tentang this pada arrow function #########################################################################
+
+/* let box = document.querySelector(".box");
+box.addEventListener("click", function () {
+  let size = "size";
+  let caption = "caption";
+
+  if (this.classList.contains(size)) {
+    [size, caption] = [caption, size];
+  }
+
+  this.classList.toggle(size);
+  setTimeout(() => {
+    this.classList.toggle(caption);
+  }, 600);
+}); */
+
+// Pembahasan tentang Higer Order Fucntion #########################################################################
+
+// contoh-contoh:
+/* function repeatApp(x, action) {
+  for (let i = 1; i <= x; i++) {
+    action(i);
+  }
+}
+repeatApp(3, alert); */
+
+// const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+// latihan 3 function
+
+const names = Array.from(document.querySelectorAll("ul li"));
+const icam = names.filter((name) => name.textContent.includes("icam")).map((item) => item.dataset.alamat);
+console.log(icam);
