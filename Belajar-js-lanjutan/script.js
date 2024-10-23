@@ -201,6 +201,55 @@ repeatApp(3, alert); */
 
 // latihan 3 function
 
-const names = Array.from(document.querySelectorAll("ul li"));
+/* const names = Array.from(document.querySelectorAll("ul li"));
 const icam = names.filter((name) => name.textContent.includes("icam")).map((item) => item.dataset.alamat);
 console.log(icam);
+ */
+
+// pembahasan tntang templet literal #########################################################################
+/* console.log(`icam
+fadilah
+fatwa`); */
+
+/* let nama = "icam";
+let usia = 20;
+console.log(`Hallo ${nama} apakah anda berusia ${usia} ?`); */
+
+/* let a = 15;
+let b = 5;
+console.log(`variable a di kali 2 hasil nya = ${a * 2}
+dan variable b di kali 6 hasil nya = ${b * 6}`); */
+
+/* let r = `<div class="div"><h2>
+</h2>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul></div>`;
+
+console.log(r); */
+
+// Pemnbahasan descturcturing asigmnet #########################################################################
+/* const ruy = ["icam", "fadilah", "sese"];
+const [a, b, c] = ruy;
+
+console.log(a);
+console.log(b);
+console.log(c); */
+
+// contoh saya hanya ingin hallo dan futuh, caranya kaya gini
+/* const ruy = ["hallo", "nama", "saya", "Futuh"];
+const [a, , , d] = ruy;
+ */
+
+// swap items
+/* let a = 1;
+let b = 2;
+console.log(a);
+console.log(b);
+[a, b] = [20, 12];
+console.log(a);
+console.log(b); */
+
