@@ -19,3 +19,18 @@
 .caption {
   background-color: white;
 }
+
+.nama {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nama span {
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.nama span:hover {
+  transform: scale(2);
+}

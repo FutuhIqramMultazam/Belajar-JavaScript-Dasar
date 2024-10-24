@@ -171,8 +171,7 @@ console.table(jumlahHuruf);
  */
 
 // pembahasan tentang this pada arrow function #########################################################################
-
-/* let box = document.querySelector(".box");
+let box = document.querySelector(".box");
 box.addEventListener("click", function () {
   let size = "size";
   let caption = "caption";
@@ -182,10 +181,11 @@ box.addEventListener("click", function () {
   }
 
   this.classList.toggle(size);
+
   setTimeout(() => {
     this.classList.toggle(caption);
   }, 600);
-}); */
+});
 
 // Pembahasan tentang Higer Order Fucntion #########################################################################
 
@@ -253,3 +253,41 @@ console.log(b);
 console.log(a);
 console.log(b); */
 
+// Pembahasan tentang for in #########################################################################
+
+/* let nama = "futuh";
+
+for (const n of nama) {
+  console.log(n);
+} */
+
+// Pembahasan tentang spreed operator #########################################################################
+
+/* const nama = "futuh";
+const huruf = [...nama];
+console.log(huruf); */
+
+const nama = document.querySelector(".nama");
+const huruf = [...nama.textContent].map((n) => (n === " " ? `<span>&nbsp;</span>` : `<span>${n}</span>`)).join("");
+nama.innerHTML = huruf;
+
+// rest parameter #########################################################################
+/* function myFunc(...myParam) {
+  return myParam;
+}
+
+console.log(myFunc(1, 2, 3, 4, 5, 6)); */
+
+/* function myFunc(...myParam) {
+  //  let total = 0;
+  // for (const m of myParam) {
+  //   total += m;
+  // }
+  // return total;
+  return myParam.reduce((a, b) => a + b);
+}
+
+console.log(myFunc(1, 2, 3, 4, 5, 6)); */
+
+/* let a = "icam";
+typeof a === "number" ? console.log("iya bener") : console.log("salah"); */
