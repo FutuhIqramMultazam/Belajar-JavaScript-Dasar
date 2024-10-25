@@ -1,4 +1,4 @@
-// object literal #########################################################################
+// * object literal #########################################################################
 // PROBLEM: tidak efektif untuk object yang sama
 /* let nama = {
   nama: "Futuh",
@@ -9,7 +9,7 @@
   },
 }; */
 
-// Fungsi deklarasi #########################################################################
+// * Fungsi deklarasi #########################################################################
 // versi biasa
 /* const mahasiswaMethod = {
   makan: function (porsi) {
@@ -35,7 +35,7 @@ function mahasiswa(nama, energi) {
   return mahasiswa;
 } */
 
-// versi prototype @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// * versi prototype @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 /* function mahasiswa(nama, energi) {
   this.nama = nama;
@@ -58,7 +58,7 @@ mahasiswa.prototype.tidur = function (jam) {
 let icam = new mahasiswa("Futuh Iqram Multazam", 10);
 let fadilah = new mahasiswa("Fadilah Fatwa", 5); */
 
-// versi class @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// * versi class @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 /* class mahasiswa {
   constructor(nama, energi) {
     this.nama = nama;
@@ -82,7 +82,7 @@ let icam = new mahasiswa("Futuh Iqram Multazam", 10);
 let fadilah = new mahasiswa("Fadilah Fatwa", 5);
  */
 
-// konstraktur fungsi #########################################################################
+// * konstraktur fungsi #########################################################################
 /* function mahasiswa(nama, energi) {
   this.nama = nama;
   this.energi = energi;
@@ -99,7 +99,7 @@ let fadilah = new mahasiswa("Fadilah Fatwa", 5);
 }
 let icam = new mahasiswa("Futuh Iqram Multazam", 10); */
 
-// create content #########################################################################
+// * create content #########################################################################
 /* function a() {
   var nama = "Futuh Iqram Multazam";
   console.log(nama);
@@ -115,7 +115,7 @@ a();
 b("denu");
 console.log(nama); */
 
-// Pembahasan closure #########################################################################
+// * Pembahasan closure #########################################################################
 
 // contoh satu
 /* function init() {
@@ -138,7 +138,7 @@ tampilNama("Futuh"); */
 let selamatSiang = ucapkanSalam("Pagi");
 selamatSiang("Icam"); */
 
-// Pembahasan arrow function #########################################################################
+// * Pembahasan arrow function #########################################################################
 // contoh-contoh arrow function
 
 /* let tampilNama = (nama = "manusia") => {
@@ -170,7 +170,7 @@ selamatSiang("Icam"); */
 console.table(jumlahHuruf);
  */
 
-// pembahasan tentang this pada arrow function #########################################################################
+// * pembahasan tentang this pada arrow function #########################################################################
 let box = document.querySelector(".box");
 box.addEventListener("click", function () {
   let size = "size";
@@ -187,7 +187,7 @@ box.addEventListener("click", function () {
   }, 600);
 });
 
-// Pembahasan tentang Higer Order Fucntion #########################################################################
+// * Pembahasan tentang Higer Order Fucntion #########################################################################
 
 // contoh-contoh:
 /* function repeatApp(x, action) {
@@ -206,7 +206,7 @@ const icam = names.filter((name) => name.textContent.includes("icam")).map((item
 console.log(icam);
  */
 
-// pembahasan tntang templet literal #########################################################################
+// * pembahasan tntang templet literal #########################################################################
 /* console.log(`icam
 fadilah
 fatwa`); */
@@ -231,7 +231,7 @@ dan variable b di kali 6 hasil nya = ${b * 6}`); */
 
 console.log(r); */
 
-// Pemnbahasan descturcturing asigmnet #########################################################################
+// * Pemnbahasan descturcturing asigmnet #########################################################################
 /* const ruy = ["icam", "fadilah", "sese"];
 const [a, b, c] = ruy;
 
@@ -253,7 +253,7 @@ console.log(b);
 console.log(a);
 console.log(b); */
 
-// Pembahasan tentang for in #########################################################################
+// * Pembahasan tentang for in #########################################################################
 
 /* let nama = "futuh";
 
@@ -261,7 +261,7 @@ for (const n of nama) {
   console.log(n);
 } */
 
-// Pembahasan tentang spreed operator #########################################################################
+// * Pembahasan tentang spreed operator #########################################################################
 
 /* const nama = "futuh";
 const huruf = [...nama];
@@ -271,7 +271,7 @@ const nama = document.querySelector(".nama");
 const huruf = [...nama.textContent].map((n) => (n === " " ? `<span>&nbsp;</span>` : `<span>${n}</span>`)).join("");
 nama.innerHTML = huruf;
 
-// rest parameter #########################################################################
+// * rest parameter #########################################################################
 /* function myFunc(...myParam) {
   return myParam;
 }
@@ -292,7 +292,7 @@ console.log(myFunc(1, 2, 3, 4, 5, 6)); */
 /* let a = "icam";
 typeof a === "number" ? console.log("iya bener") : console.log("salah"); */
 
-// pembahasan tentang promise #########################################################################
+// * pembahasan tentang promise #########################################################################
 
 // menggunakan ajax %%%%%%
 /* $.ajax({
@@ -316,7 +316,7 @@ aksi (then / catch)
 */
 
 // contoh 1
-let ditepati = false;
+/* let ditepati = false;
 const janji1 = new Promise((resolve, reject) => {
   if (ditepati) {
     resolve("janji telah di tepati");
@@ -326,10 +326,31 @@ const janji1 = new Promise((resolve, reject) => {
 });
 
 janji1.then((respone) => console.log(`OK : ${respone}`)).catch((respone) => console.log(`NOT OK : ${respone}`));
+console.log(janji1); */
 
-// terakhir di materi ke 21 di menit ke 9:17
+// latihan ambil API menggunakan fetch
 
-console.log(janji1);
+const tombol = document.getElementById("tombol");
+tombol.addEventListener("click", async () => {
+  let title = document.getElementById("cari");
+  let movies = await getMovies(title);
+  console.log(movies);
+});
+
+function getMovies(keyword) {
+  return fetch(`http://www.omdbapi.com/?apikey=c91e9192&s=${keyword.value}`)
+    .then((respone) => respone.json())
+    .then((respone) => {
+      if (respone.Response === "True") {
+        let movies = respone.Search;
+        movies.forEach((m) => {
+          console.log(m);
+        });
+      } else {
+        console.log(respone.Error);
+      }
+    });
+}
 
 function searchMovie() {
   $("#listMovie").html("");
@@ -344,7 +365,7 @@ function searchMovie() {
     success: (result) => {
       let movies = result.Search;
       $.each(movies, function (i, v) {
-        $("#listMovie").append(`
+        $("#listMovie").append(/* html */ `
       <div class="col-md-3">
         <div class="card" style="width: 18rem;">
           <img src="${v.Poster}" class="card-img-top" alt="${v.Title}">
