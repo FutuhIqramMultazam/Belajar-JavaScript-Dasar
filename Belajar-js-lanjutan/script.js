@@ -291,3 +291,82 @@ console.log(myFunc(1, 2, 3, 4, 5, 6)); */
 
 /* let a = "icam";
 typeof a === "number" ? console.log("iya bener") : console.log("salah"); */
+
+// pembahasan tentang promise #########################################################################
+
+// menggunakan ajax %%%%%%
+/* $.ajax({
+  url: "http://www.omdbapi.com/?apikey=c91e9192&s=naruto",
+  success: (movies) => console.log(movies),
+}); */
+
+// menggunakan fetch %%%%%%
+/* fetch("http://www.omdbapi.com/?apikey=c91e9192&s=naruto")
+  .then((respone) => respone.json())
+  .then((respone) => console.log(respone)); */
+
+// promise %%%%%%
+/* 
+object yang memperesentasikan keberhasilan / kegagalan sebuah event asyncronuse di masa yang akan datang , 
+atau bisa di katakan 
+janji ( terpenuhi / ingkar) 
+states (fulfiled / rejecte / pending)
+callback (resolve / reject / finally)
+aksi (then / catch)
+*/
+
+// contoh 1
+let ditepati = false;
+const janji1 = new Promise((resolve, reject) => {
+  if (ditepati) {
+    resolve("janji telah di tepati");
+  } else {
+    reject("ingkar janji");
+  }
+});
+
+janji1.then((respone) => console.log(`OK : ${respone}`)).catch((respone) => console.log(`NOT OK : ${respone}`));
+
+// terakhir di materi ke 21 di menit ke 9:17
+
+console.log(janji1);
+
+function searchMovie() {
+  $("#listMovie").html("");
+  $.ajax({
+    type: "get",
+    url: "http://www.omdbapi.com",
+    data: {
+      apikey: "c91e9192",
+      s: $("#cari").val(),
+    },
+    dataType: "json",
+    success: (result) => {
+      let movies = result.Search;
+      $.each(movies, function (i, v) {
+        $("#listMovie").append(`
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="${v.Poster}" class="card-img-top" alt="${v.Title}">
+          <div class="card-body">
+            <p class="card-text">Title : ${v.Title}. Year ${v.Year}</p>
+          </div>
+        </div>
+      </div>
+        `);
+      });
+    },
+  });
+
+  // $("#cari").val("");
+}
+
+$("#tombol").on("click", function () {
+  searchMovie();
+});
+
+$("#cari").on("keyup", function (e) {
+  if (e.keyCode === 13) {
+    searchMovie();
+  }
+});

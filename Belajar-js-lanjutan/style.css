@@ -1,14 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .box {
   width: 100px;
   height: 100px;
   border: 1px solid white;
   margin: 50px auto;
   transition: 0.3s width, 0.3s height 0.3s, 0.3s margin-top 0.3s, 1s background-color;
+  cursor: pointer;
 }
 
 .size {
@@ -33,4 +29,10 @@
 
 .nama span:hover {
   transform: scale(2);
+  cursor: pointer;
+  color: aqua;
+}
+
+.text-center {
+  text-align: center;
 }
